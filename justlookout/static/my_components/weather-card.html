@@ -1,0 +1,29 @@
+<link rel="import" href="../components/polymer/polymer.html">
+<link rel="import" href="../components/iron-ajax/iron-ajax.html">
+
+<dom-module id="weather-card">
+  <template>
+    <iron-ajax
+        id="get_temperature"
+        auto
+        handle-as='json'
+        last-response={{resp}}></iron-ajax>
+    <h2>{{city}}</h2>
+    <p>{{resp.main.temp}}</p>
+  </template>
+</dom-module>
+
+<script>
+  Polymer({
+    is: 'weather-card',
+
+    properties: {
+      city: String
+    },
+
+    ready: function () {
+        this.$.get_temperature.url = "http://api.openweathermap.org/data/2.5/weather/?q=" + this.city;
+        this.$.get_temperature.generateRequest();
+    }
+  });
+</script>

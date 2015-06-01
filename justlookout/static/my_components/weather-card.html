@@ -22,8 +22,11 @@
     },
 
     ready: function () {
-        this.$.get_temperature.url = "http://api.openweathermap.org/data/2.5/weather/?q=" + this.city;
-        this.$.get_temperature.generateRequest();
+        var self = this;
+        self.$.get_temperature.url = "http://api.openweathermap.org/data/2.5/weather/?q=" + this.city;
+        setInterval(function () {
+            self.$.get_temperature.generateRequest();
+        }, 30000);
     }
   });
 </script>

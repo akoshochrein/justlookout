@@ -1,0 +1,7 @@
+.weather-card-wrapper {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    height: 200px;
+    width: 200px;
+}

@@ -2,14 +2,17 @@
 <link rel="import" href="../components/iron-ajax/iron-ajax.html">
 
 <dom-module id="weather-card">
+  <link rel="import" type="css" href="weather_card.css">
   <template>
     <iron-ajax
         id="get_temperature"
         auto
         handle-as='json'
         last-response={{resp}}></iron-ajax>
-    <h2>{{city}}</h2>
-    <p>{{resp.main.temp}}</p>
+    <div class="weather-card-wrapper">
+      <h2>{{city}}</h2>
+      <p>{{resp.main.temp}}</p>
+    </div>
   </template>
 </dom-module>
 

@@ -1,7 +1,21 @@
-.weather-card-wrapper {
+div.weather-card-wrapper {
+    background-color: rgba(10, 10, 10, .3);
+    color: #FFF;
+    text-shadow: 0 0 3px #333;;
+
     display: inline-block;
     text-align: center;
     vertical-align: middle;
     height: 200px;
     width: 200px;
+
+    margin: 10px;
+}
+
+div.weather-card-wrapper:hover {
+    background-color: rgba(10, 10, 10, .5);
+}
+
+div.weather-card-wrapper h2 {
+    margin-top: 30%;
 }
